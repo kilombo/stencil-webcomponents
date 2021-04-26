@@ -71,6 +71,7 @@ declare namespace LocalJSX {
         "text"?: string;
     }
     interface PtPromotedProducts {
+        "onProductClicked"?: (event: CustomEvent<any>) => void;
         "products"?: string;
     }
     interface IntrinsicElements {

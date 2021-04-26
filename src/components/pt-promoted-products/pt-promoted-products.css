@@ -14,4 +14,10 @@
   padding: 10px 30px;
   box-shadow: 2px 2px 9px 2px rgba(0, 0, 0, 0.28);
   color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.ptPromotedProducts-item:hover{
+  transform: scale(1.01);
+
 }
