@@ -23,6 +23,9 @@ export namespace Components {
     interface PtButton {
         "text": string;
     }
+    interface PtPromotedProducts {
+        "products": string;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -37,9 +40,16 @@ declare global {
         prototype: HTMLPtButtonElement;
         new (): HTMLPtButtonElement;
     };
+    interface HTMLPtPromotedProductsElement extends Components.PtPromotedProducts, HTMLStencilElement {
+    }
+    var HTMLPtPromotedProductsElement: {
+        prototype: HTMLPtPromotedProductsElement;
+        new (): HTMLPtPromotedProductsElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "pt-button": HTMLPtButtonElement;
+        "pt-promoted-products": HTMLPtPromotedProductsElement;
     }
 }
 declare namespace LocalJSX {
@@ -60,9 +70,13 @@ declare namespace LocalJSX {
     interface PtButton {
         "text"?: string;
     }
+    interface PtPromotedProducts {
+        "products"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "pt-button": PtButton;
+        "pt-promoted-products": PtPromotedProducts;
     }
 }
 export { LocalJSX as JSX };
@@ -71,6 +85,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "pt-button": LocalJSX.PtButton & JSXBase.HTMLAttributes<HTMLPtButtonElement>;
+            "pt-promoted-products": LocalJSX.PtPromotedProducts & JSXBase.HTMLAttributes<HTMLPtPromotedProductsElement>;
         }
     }
 }
